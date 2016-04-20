@@ -1,0 +1,269 @@
+<div class="contentHomeRegister" ng-controller="MessagesViewController" ng-init="init()">
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="slide-nav" style="margin-bottom: 0px;border-bottom: 2px solid orange;">
+		<div class="container">
+			<div class="navbar-header">
+				<div class="row row-1">
+					<a class="navbar-toggle">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+					<!-- <a class="navbar-brand">Project name</a> -->
+					<!-- <ul class="nav navbar-nav" style="width: 43%;margin-left: 15%;text-transform: none;height: 40px;">
+						<li class="dropdown" style="margin-top: 5px;"> <a href="" class="dropdown-toggle" data-toggle="dropdown" style="font-size: 16px;">Members<b class="caret"></b></a>
+							<ul class="dropdown-menu" style="background-color:black;position: relative;top: 0%;">
+								<li style="margin: 0;"><a href="" style="color:rgb(227, 108, 10);font-size: 16px;font-weight: 600;">Message</a></li>
+								<li style="margin: 0;"><a href="" style="color:rgb(255, 0, 0);font-size: 16px;font-weight: 600;">Community</a></li>
+								<li style="margin: 0;"><a href="" style="color:rgb(0, 176, 240);font-size: 16px;font-weight: 600;">Companies</a></li>
+							</ul>
+						</li>
+					</ul> -->
+					<label style="width: 43%;  margin-left: 7%;  text-transform:none;margin-top: 4%;color: white;font-size: 16px;font-weight: 700;"> Members </label>
+					<button type="submit">
+						<i class="fa fa-search"></i>
+						<!-- <i class="fa fa-calendar-check-o"></i> -->
+					</button>
+				</div>
+				<div class="row row-2">
+					<div class="col-xs-4" style="text-align: center;" ng-click="GoToHome()">
+						<a class="dropdown-toggle count-info" data-toggle="dropdown" href="" style="padding-top: 20px;padding-bottom: 7px;min-height: 50px;display: block;position: relative;">
+							<i class="fa fa-globe" style="color: white;font-size:22px;"></i><!--   <span class="label label-warning">16</span> -->
+						</a> 
+					</div>
+					<div class="col-xs-4" style="text-align: center;">
+						<a class="dropdown-toggle count-info" data-toggle="dropdown" href="" style="padding-top: 20px;min-height: 50px;display: block;position: relative;">
+							<i class="fa fa-envelope" style="color: white;font-size:22px;"></i> <!-- <b class="badge bg-color-red bounceIn animated"> 21 </b> -->
+						</a>
+					</div>
+					<div class="col-xs-4" style="text-align: center;" ng-click="GoToMap()">
+						<a class="right-sidebar-toggle count-info" data-toggle="dropdown" href="" style="padding-top: 20px;min-height: 50px;display: block;position: relative;">
+							<i class="fa fa-user" style="color: white;font-size:22px;"></i><!--  <b class="badge-companies bg-color-red bounceIn animated"> 21 </b> -->
+						</a>
+					</div>
+				</div>
+				<div class="row row-3" style="border: 1px solid orange;top: 0px;position: relative;width: 33.33%;margin-left: 33.33%;" />
+			</div>
+
+			<div id="slidemenu">
+				<ul class="nav navbar-nav" style="text-transform:none;">
+					<li style="margin: 0;padding: 0;padding-top: 10px;height: 97px;">
+						<div class="row">
+						<!-- background-image: url(https://media.licdn.com/mpr/mprx/0_YSs4eL1JiUxK6U3zM7C9_AYJ8WxK_I1ZlpCnSKLJTg8A6U-zAp846QYJQW9K_o8ZqSCM8NlMuOAlh7vzNOxX8AKvdOArh7nqAOxRwr5ZG0XyoMSeg7dvIkwWWwIhW73LZgRq2CWTXYj); -->
+							<div class="col-xs-4" ng-style="{'background-image': 'url(' + urlImageUserProfile + ')'}" style="
+								background-repeat: no-repeat;height: 70px;width: 70px;border-radius: 50%;margin-top: 11px;margin-left: 10px;border: 2px solid white;" />
+							<div class="col-xs-8" style="color: white;float: left;padding-top: 25px;padding-bottom: 10px;">
+								<label style="font-size: 18px;font-weight: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">{{nameUserProfile}}</label>
+								<br>
+								<label style="color: #737373;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;font-weight: normal;">{{addressUserProfile}}</label>
+							</div>
+						</div>
+					</li>
+					<li style="border-bottom: 1px solid #e3e3e3;height: 1px;margin-top: 7px;margin-bottom: 10px;"></li>
+					<li><a href="">Jobs</a></li>
+					<li style="margin-top: 0px;margin-bottom: 0px;"><a href="">Events</a></li>
+					<li style="border-bottom: 1px solid #e3e3e3;margin-top: 7px;;height: 1px;"></li>
+					<li style="margin-top: 0px;margin-bottom: 0px;"><a href="">My Profile</a></li>
+					<li style="margin-top: 0px;margin-bottom: 0px;"><a href="">Company Profile</a></li>
+					<li style="margin-top: 0px;margin-bottom: 0px;"><a href="">Account</a></li>
+					<li style="border-bottom: 1px solid #e3e3e3;padding: 0px;height: 1px;"></li>
+					<li style="margin-top: 0px;margin-bottom: 0px;"><a href="">About</a></li>
+					<li style="margin-top: 0px;margin-bottom: 0px;"><a href="">Contact</a></li>
+					<li style="margin-top: 0px;margin-bottom: 0px;"><a href="">Log Out</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<!--wrap the page content do not style this-->
+	<div id="page-content" style="padding-top: 0px;overflow-y: scroll;height: 520px;">
+		<div class="container" style="padding-left: 0px;padding-right: 0px;">
+			<article class="col-sm-12 sortable-grid ui-sortable" style="padding-left: 0px;padding-right: 0px;">
+				<!-- new widget -->
+				<div class="jarviswidget jarviswidget-sortable" id="wid-id-0" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false" role="widget">
+					<div class="no-padding" role="content">
+						<div class="widget-body">
+							<!-- content -->
+							<div class="tab-content" style="text-transform: none;">
+								<div id="tab-1" class="tab-pane active">
+									<div>
+										<div class="sidebar-message" style="float: left;width: 100%;padding: 0;" ng-repeat="message in messages">
+											<div class="pull-left text-center" style="border-bottom: 2px solid #e3e3e3;border-right: 1px solid #e3e3e3;padding-top: 1px;">
+												<img alt="image" style="height: 110px;width: 110px;border-radius: 0%;" src="img/a1.jpg">
+											</div>
+											<div class="media-body" style="padding-left: 10px;border-bottom: 1px solid #e3e3e3;position: relative;height: 113px;">
+												<label style="padding-top: 40px;text-transform: uppercase;">{{message.PostedBy}}</label>
+												<br>
+												<label style="text-overflow: ellipsis;overflow: hidden;white-space: nowrap;width: 100%;color: #888888;font-weight: normal;display: inline-block;position: absolute;padding-right: 15px;padding-bottom: 10px;">{{message.Post}}</label>
+												<br>
+												<label style="float: right;font-weight: normal;font-size: 13px;padding-top: 15px;">
+													<small class="text-muted" style="float: right;margin-right: 10px;">{{message.DatePosted}}</small>
+												<label>
+											</div>
+										</div>
+										<!-- <div class="sidebar-message" style="float: left;width: 100%;padding: 0;">
+											<div class="pull-left text-center" style="border-bottom: 2px solid #e3e3e3;border-right: 1px solid #e3e3e3;padding-top: 1px;">
+												<img alt="image" class="message-avatar" src="img/a2.jpg">
+											</div>
+											<div class="media-body" style="padding-left: 10px;padding-right: 0;border-bottom: 1px solid #e3e3e3;">
+												<label style="">STEPHANIE ALMAN</label>
+												<br>
+												<label style="/* padding: 0px; */text-overflow: ellipsis;overflow: hidden;/* white-space: pre-line; */width: 100%;/* position: fixed; */color: #888888;font-weight: normal;">There are many variations of passages of Lorem Ipsum available.</label>
+												<br>
+												<label style="/* padding-top: 5px; */float: right;font-weight: normal;font-size: 13px;">
+													<small class="text-muted" style="float: right;margin-right: 15px;">Today 4:21 pm</small>
+												<label>
+											</div>
+										</div>
+										<div class="sidebar-message" style="float: left;width: 100%;padding: 0;">
+											<div class="pull-left text-center" style="border-bottom: 2px solid #e3e3e3;border-right: 1px solid #e3e3e3;padding-top: 1px;">
+												<img alt="image" class="message-avatar" src="img/a3.jpg">
+											</div>
+											<div class="media-body" style="padding-left: 10px;padding-right: 0;border-bottom: 1px solid #e3e3e3;">
+												<label style="">KELLY RECTOR</label>
+												<br>
+												<label style="/* padding: 0px; */text-overflow: ellipsis;overflow: hidden;/* white-space: pre-line; */width: 100%;/* position: fixed; */color: #888888;font-weight: normal;">There are many variations of passages of Lorem Ipsum available.</label>
+												<br>
+												<label style="/* padding-top: 5px; */float: right;font-weight: normal;font-size: 13px;">
+													<small class="text-muted" style="float: right;margin-right: 15px;">Today 4:21 pm</small>
+												<label>
+											</div>
+										</div>
+										<div class="sidebar-message" style="float: left;width: 100%;padding: 0;">
+											<div class="pull-left text-center" style="border-bottom: 2px solid #e3e3e3;border-right: 1px solid #e3e3e3;padding-top: 1px;">
+												<img alt="image" class="message-avatar" src="img/a4.jpg">
+											</div>
+											<div class="media-body" style="padding-left: 10px;padding-right: 0;border-bottom: 1px solid #e3e3e3;">
+												<label style="">SARAH AHMAD</label>
+												<br>
+												<label style="/* padding: 0px; */text-overflow: ellipsis;overflow: hidden;/* white-space: pre-line; */width: 100%;/* position: fixed; */color: #888888;font-weight: normal;">There are many variations of passages of Lorem Ipsum available.</label>
+												<br>
+												<label style="/* padding-top: 5px; */float: right;font-weight: normal;font-size: 13px;">
+													<small class="text-muted" style="float: right;margin-right: 15px;">Today 4:21 pm</small>
+												<label>
+											</div>
+										</div>
+										<div class="sidebar-message" style="float: left;width: 100%;padding: 0;">
+											<div class="pull-left text-center" style="border-bottom: 2px solid #e3e3e3;border-right: 1px solid #e3e3e3;padding-top: 1px;">
+												<img alt="image" class="message-avatar" src="img/a8.jpg">
+											</div>
+											<div class="media-body" style="padding-left: 10px;padding-right: 0;border-bottom: 1px solid #e3e3e3;">
+												<label style="">JORDAN PARKER</label>
+												<br>
+												<label style="/* padding: 0px; */text-overflow: ellipsis;overflow: hidden;/* white-space: pre-line; */width: 100%;/* position: fixed; */color: #888888;font-weight: normal;">There are many variations of passages of Lorem Ipsum available.</label>
+												<br>
+												<label style="/* padding-top: 5px; */float: right;font-weight: normal;font-size: 13px;">
+													<small class="text-muted" style="float: right;margin-right: 15px;">Today 4:21 pm</small>
+												<label>
+											</div>
+										</div>
+										<div class="sidebar-message" style="float: left;width: 100%;padding: 0;">
+											<div class="pull-left text-center" style="border-bottom: 2px solid #e3e3e3;border-right: 1px solid #e3e3e3;padding-top: 1px;">
+												<img alt="image" class="message-avatar" src="img/a7.jpg">
+											</div>
+											<div class="media-body" style="padding-left: 10px;padding-right: 0;border-bottom: 1px solid #e3e3e3;">
+												<label style="">CARLY LANGLEY</label>
+												<br>
+												<label style="/* padding: 0px; */text-overflow: ellipsis;overflow: hidden;/* white-space: pre-line; */width: 100%;/* position: fixed; */color: #888888;font-weight: normal;">There are many variations of passages of Lorem Ipsum available.</label>
+												<br>
+												<label style="/* padding-top: 5px; */float: right;font-weight: normal;font-size: 13px;">
+													<small class="text-muted" style="float: right;margin-right: 15px;">Today 4:21 pm</small>
+												<label>
+											</div>
+										</div>
+										<div class="sidebar-message" style="float: left;width: 100%;padding: 0;">
+											<div class="pull-left text-center" style="border-bottom: 2px solid #e3e3e3;border-right: 1px solid #e3e3e3;padding-top: 1px;">
+												<img alt="image" class="message-avatar" src="img/a1.jpg">
+											</div>
+											<div class="media-body" style="padding-left: 10px;padding-right: 0;border-bottom: 1px solid #e3e3e3;">
+												<label style="">MARK GOLDFINGER</label>
+												<br>
+												<label style="/* padding: 0px; */text-overflow: ellipsis;overflow: hidden;/* white-space: pre-line; */width: 100%;/* position: fixed; */color: #888888;font-weight: normal;">There are many variations of passages of Lorem Ipsum available.</label>
+												<br>
+												<label style="/* padding-top: 5px; */float: right;font-weight: normal;font-size: 13px;">
+													<small class="text-muted" style="float: right;margin-right: 15px;">Today 4:21 pm</small>
+												<label>
+											</div>
+										</div>
+										<div class="sidebar-message" style="float: left;width: 100%;padding: 0;">
+											<div class="pull-left text-center" style="border-bottom: 2px solid #e3e3e3;border-right: 1px solid #e3e3e3;padding-top: 1px;">
+												<img alt="image" class="message-avatar" src="img/a1.jpg">
+											</div>
+											<div class="media-body" style="padding-left: 10px;padding-right: 0;border-bottom: 1px solid #e3e3e3;">
+												<label style="">CARLY LANGLEY</label>
+												<br>
+												<label style="/* padding: 0px; */text-overflow: ellipsis;overflow: hidden;/* white-space: pre-line; */width: 100%;/* position: fixed; */color: #888888;font-weight: normal;">There are many variations of passages of Lorem Ipsum available.</label>
+												<br>
+												<label style="/* padding-top: 5px; */float: right;font-weight: normal;font-size: 13px;">
+													<small class="text-muted" style="float: right;margin-right: 15px;">Today 4:21 pm</small>
+												<label>
+											</div>
+										</div>
+										<div class="sidebar-message" style="float: left;width: 100%;padding: 0;">
+											<div class="pull-left text-center" style="border-bottom: 2px solid #e3e3e3;border-right: 1px solid #e3e3e3;padding-top: 1px;">
+												<img alt="image" class="message-avatar" src="img/a3.jpg">
+											</div>
+											<div class="media-body" style="padding-left: 10px;padding-right: 0;border-bottom: 1px solid #e3e3e3;">
+												<label style="">WILL HURLEY *</label>
+												<br>
+												<label style="/* padding: 0px; */text-overflow: ellipsis;overflow: hidden;/* white-space: pre-line; */width: 100%;/* position: fixed; */color: #888888;font-weight: normal;">There are many variations of passages of Lorem Ipsum available.</label>
+												<br>
+												<label style="/* padding-top: 5px; */float: right;font-weight: normal;font-size: 13px;">
+													<small class="text-muted" style="float: right;margin-right: 15px;">Today 4:21 pm</small>
+												<label>
+											</div>
+										</div>
+										<div class="sidebar-message" style="float: left;width: 100%;padding: 0;">
+											<div class="pull-left text-center" style="border-bottom: 2px solid #e3e3e3;border-right: 1px solid #e3e3e3;padding-top: 1px;">
+												<img alt="image" class="message-avatar" src="img/a1.jpg">
+											</div>
+											<div class="media-body" style="padding-left: 10px;padding-right: 0;border-bottom: 1px solid #e3e3e3;">
+												<label style="">ADAM WACENSKE</label>
+												<br>
+												<label style="/* padding: 0px; */text-overflow: ellipsis;overflow: hidden;/* white-space: pre-line; */width: 100%;/* position: fixed; */color: #888888;font-weight: normal;">There are many variations of passages of Lorem Ipsum available.</label>
+												<br>
+												<label style="/* padding-top: 5px; */float: right;font-weight: normal;font-size: 13px;">
+													<small class="text-muted" style="float: right;margin-right: 15px;">Today 4:21 pm</small>
+												<label>
+											</div>
+										</div>
+										<div class="sidebar-message" style="float: left;width: 100%;padding: 0;">
+											<div class="pull-left text-center" style="border-bottom: 2px solid #e3e3e3;border-right: 1px solid #e3e3e3;padding-top: 1px;">
+												<img alt="image" class="message-avatar" src="img/a4.jpg">
+											</div>
+											<div class="media-body" style="padding-left: 10px;padding-right: 0;border-bottom: 1px solid #e3e3e3;">
+												<label style="">WILLIAM GUROWSKI</label>
+												<br>
+												<label style="/* padding: 0px; */text-overflow: ellipsis;overflow: hidden;/* white-space: pre-line; */width: 100%;/* position: fixed; */color: #888888;font-weight: normal;">There are many variations of passages of Lorem Ipsum available.</label>
+												<br>
+												<label style="/* padding-top: 5px; */float: right;font-weight: normal;font-size: 13px;">
+													<small class="text-muted" style="float: right;margin-right: 15px;">Today 4:21 pm</small>
+												<label>
+											</div>
+										</div>
+										<div class="sidebar-message" style="float: left;width: 100%;padding: 0;">
+											<div class="pull-left text-center" style="border-bottom: 2px solid #e3e3e3;border-right: 1px solid #e3e3e3;padding-top: 1px;">
+												<img alt="image" class="message-avatar" src="img/a7.jpg">
+											</div>
+											<div class="media-body" style="padding-left: 10px;padding-right: 0;border-bottom: 1px solid #e3e3e3;">
+												<label style="">DANIEL O'DUFFY</label>
+												<br>
+												<label style="/* padding: 0px; */text-overflow: ellipsis;overflow: hidden;/* white-space: pre-line; */width: 100%;/* position: fixed; */color: #888888;font-weight: normal;">There are many variations of passages of Lorem Ipsum available.</label>
+												<br>
+												<label style="/* padding-top: 5px; */float: right;font-weight: normal;font-size: 13px;">
+													<small class="text-muted" style="float: right;margin-right: 15px;">Today 4:21 pm</small>
+												<label>
+											</div>
+										</div> -->
+									</div>
+								</div>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</article>
+		</div>
+		<!-- /.container -->
+	</div>
+	<!-- /#page-content -->
+</div>

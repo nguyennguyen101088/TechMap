@@ -1,0 +1,97 @@
+<div class="contentHomeRegister" ng-controller="EventsMyStateViewController" ng-init="init()">
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="slide-nav" style="margin-bottom: 0px;height: 80px;border-bottom: 3px solid orange;">
+		<div class="container">
+			<div class="navbar-header">
+				<div class="row row-1" style="height:40px;">
+					<button type="submit" style="float:left;position: relative;margin-left: 3%;padding: 0px;margin-right: 0px;" ng-click="GoToHome()">
+						<i class="fa fa-arrow-left"></i>
+					</button>
+					<label style="margin-top: 4%;margin-left: 3%;text-transform: none;text-shadow: none;color: white;font-size: 16px;"> Events </label>
+					<button type="submit" style="margin-right: 8%;">
+						<i class="fa fa-filter"></i>
+					</button>
+				</div>
+				<div class="row row-2" style="height:40px;">
+					<ul class="nav nav-tabs" style="margin: 0px;height: 40px;">
+						<li role="presentation" class="active" style="color: white;width: 50%;text-align: center;vertical-align: middle;padding: 0px;font-weight: 800;" ng-click="GoEventsGlobal()">GLOBAL</li>
+						<li role="presentation" class="active" style="color: white;width: 50%;text-align: center;vertical-align: middle;padding: 0px;font-weight: 800;">MY STATE</li>
+						<!-- <li role="presentation" class="active" style="color: white;width: 33.33%;text-align: center;vertical-align: middle;padding: 0px;font-weight: 800;" ng-click="GoEventsMyCity()">MY CITY</li> -->
+						
+					</ul>
+				</div>
+				<div class="row-3" style="width: 50%;margin-top: 26%;margin-left: 50%;border: 2px solid orange;top: -100px;position: relative;" />
+			</div>
+		</div>
+	</div>
+
+	<!--wrap the page content do not style this-->
+	<div id="page-content" style="overflow-y: scroll;height: 548px;position: fixed;margin: 0px;padding: 0px;">
+		<div class="container" style="padding-left: 0px; padding-right: 0px;">
+			<ul>
+				<li style="height: 200px;margin-top: 5px;margin-bottom: 0;border: 1px solid gray;" ng-repeat="eventGlobal in datasMyState"> 
+					<div ng-click="GoToEventDetail({{eventGlobal}})">
+						<img alt="" style="height: 200px;background-size: cover;" src="img/background-image.jpg">
+						 <label style="color: white;float: left;margin-bottom: -100px;top: 64px;position: relative;margin-left: 2%;text-transform: none;background-color: orange;font-weight: normal;padding: 5px;font-size: 14px;">{{eventGlobal.EventDate}}</label><!-- January, 7th -->
+						 <br>
+						 <label style="color: white;float: left;margin-bottom: -110px;top: -111px;position: relative;width: 100%;background-color: gray;padding-left: 2%;padding-bottom: 5px;padding-top: 5px;font-size: 18px;margin-top: 0px;opacity: 0.9;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">{{eventGlobal.EventName}}</label>
+						 <br>
+						 <label style="color: white;float: left;margin-bottom: -120px;top: -96px;position: relative;margin-left: 2%;padding: 5px;background: grey;font-weight: normal;font-size: 14px;opacity: 0.9;">{{eventGlobal.EventStart}} - {{eventGlobal.EventEnd}}</label>
+					</div>
+				</li>
+				<!-- 
+				<li style="height: 200px;margin-top: 5px;margin-bottom: 0;border: 1px solid gray;" ng-click="GoToEventDetail()"> 
+					<div>
+						<img alt="" style="height: 200px;background-size: cover;" src="img/background-image.jpg">
+						 <label style="color: white;float: left;margin-bottom: -100px;top: -136px;position: relative;margin-left: 2%;text-transform: none;background-color: orange;font-weight: normal;padding: 5px;font-size: 14px;">March, 8th</label>
+						 <br>
+						 <label style="color: white;float: left;margin-bottom: -110px;top: -111px;position: relative;width: 100%;background-color: gray;padding-left: 2%;padding-bottom: 5px;padding-top: 5px;font-size: 18px;margin-top: 0px;opacity: 0.9;">NEW MEMBER BRUNCH</label>
+						 <br>
+						 <label style="color: white;float: left;margin-bottom: -120px;top: -96px;position: relative;margin-left: 2%;padding: 5px;background: grey;font-weight: normal;font-size: 14px;opacity: 0.9;">11:00AM - 12:00PM</label>
+					</div>
+				</li>
+				<li style="height: 200px;margin-top: 1%;margin-bottom: 0;border: 1px solid gray;">
+					<div>
+						<img alt="" style="height: 200px;background-size: cover;" src="img/background-image.jpg">
+						 <label style="color: white;float: left;margin-bottom: -100px;top: -136px;position: relative;margin-left: 2%;text-transform: none;background-color: orange;font-weight: normal;padding: 5px;font-size: 14px;">March, 8th</label>
+						 <br>
+						 <label style="color: white;float: left;margin-bottom: -110px;top: -111px;position: relative;width: 100%;background-color: gray;padding-left: 2%;padding-bottom: 5px;padding-top: 5px;font-size: 18px;margin-top: 0px;opacity: 0.9;">AMPLIFY AUSTIN HAPPY HOUR</label>
+						 <br>
+						 <label style="color: white;float: left;margin-bottom: -120px;top: -96px;position: relative;margin-left: 2%;padding: 5px;background: grey;font-weight: normal;font-size: 14px;opacity: 0.9;">5:30PM - 7:00PM</label>
+					</div>
+				</li>
+				<li style="height: 200px;margin-top: 1%;margin-bottom: 0;border: 1px solid gray;">
+					<div>
+						<img alt="" style="height: 200px;background-size: cover;" src="img/background-image.jpg">
+						 <label style="color: white;float: left;margin-bottom: -100px;top: -136px;position: relative;margin-left: 2%;text-transform: none;background-color: orange;font-weight: normal;padding: 5px;font-size: 14px;">March, 11th</label>
+						 <br>
+						 <label style="color: white;float: left;margin-bottom: -110px;top: -111px;position: relative;width: 100%;background-color: gray;padding-left: 2%;padding-bottom: 5px;padding-top: 5px;font-size: 18px;margin-top: 0px;opacity: 0.9;">WEWORK SX RECHARGE OASIS</label>
+						 <br>
+						 <label style="color: white;float: left;margin-bottom: -120px;top: -96px;position: relative;margin-left: 2%;padding: 5px;background: grey;font-weight: normal;font-size: 14px;opacity: 0.9;">9:00AM - 10:00PM</label>
+					</div>
+				</li>
+				<li style="height: 200px;margin-top: 1%;margin-bottom: 0;border: 1px solid gray;">
+					<div>
+						<img alt="" style="height: 200px;background-size: cover;" src="img/background-image.jpg">
+						 <label style="color: white;float: left;margin-bottom: -100px;top: -136px;position: relative;margin-left: 2%;text-transform: none;background-color: orange;font-weight: normal;padding: 5px;font-size: 14px;">March, 11th</label>
+						 <br>
+						 <label style="color: white;float: left;margin-bottom: -110px;top: -110px;position: relative;width: 60%;background-color: gray;padding-left: 2%;padding-bottom: 5px;padding-top: 5px;font-size: 18px;margin-top: 0px;opacity: 0.9;">WEWORK CONGRESS VISITOR ACCESS DURING SXSW</label>
+						 <br>
+						 <label style="color: white;float: left;margin-bottom: -120px;top: -74px;position: relative;margin-left: 2%;padding: 5px;background: grey;font-weight: normal;font-size: 14px;opacity: 0.9;">9:00AM - 9:30PM</label>
+					</div>
+				</li>
+				<li style="height: 200px;margin-top: 1%;margin-bottom: 0;border: 1px solid gray;">
+					<div>
+						<img alt="" style="height: 200px;background-size: cover;" src="img/background-image.jpg">
+						 <label style="color: white;float: left;margin-bottom: -100px;top: -136px;position: relative;margin-left: 2%;text-transform: none;background-color: orange;font-weight: normal;padding: 5px;font-size: 14px;">March, 15th</label>
+						 <br>
+						 <label style="color: white;float: left;margin-bottom: -110px;top: -110px;position: relative;width: 60%;background-color: gray;padding-left: 2%;padding-bottom: 5px;padding-top: 5px;font-size: 18px;margin-top: 0px;opacity: 0.9;">PANEL ON SOCIAL GOOD. HOW DO YOU MAKE DOING...</label>
+						 <br>
+						 <label style="color: white;float: left;margin-bottom: -120px;top: -74px;position: relative;margin-left: 2%;padding: 5px;background: grey;font-weight: normal;font-size: 14px;opacity: 0.9;">3:30PM - 4:30PM</label>
+					</div>
+				</li> -->
+			</ul>
+		</div>
+		<!-- /.container -->
+	</div>
+	<!-- /#page-content -->
+</div>

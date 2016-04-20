@@ -1,0 +1,385 @@
+<div class="contentRegisterView" id="register-view-partial" ng-controller="RegisterViewController" ng-init="init()">
+	<div class="container" id="login-block" style="height: 610px;overflow-y: scroll;padding: 0px;margin: 0px;">
+		<div class="row">
+			<div class="col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4"> 
+			   <div>
+					<div class="login-logo">
+						<!-- <a href=""><img src="img/login-logo.jpg" alt="Company Logo"></a> -->
+						<h3>Get started by creating a personal profile - it's free.</h3>
+					</div> 
+					<hr>
+					<div class="register-form">
+						<form class="form-horizontal">	
+							<div class="form-group">
+								<label for="inputEmail3" class="col-sm-2 control-label" style="text-transform: none;display: inline-block;margin-left: 5%;margin-right: 0px;padding-right: 0px;width: 93px;text-align: right;">Email</label>
+								<div class="col-sm-10" style="display: inline-block;margin-left: 0px; width: 65%;">
+								  <input type="text" class="form-control-register" placeholder="You@email.com" style="margin: 0px;" ng-model="email" ng-change="emailChange(email)">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputEmail3" class="col-sm-2 control-label" style="text-transform: none;display: inline-block;margin-left: 5%;margin-right: 0px;padding-right: 0px;width: 93px;text-align: right;">First Name</label>
+								<div class="col-sm-10" style="display: inline-block;margin-left: 0px; width: 65%;">
+								  <input type="text" class="form-control-register" placeholder="FirstName" style="margin: 0px;" ng-model="firstName" ng-change="firstNameChange(firstName)">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputEmail3" class="col-sm-2 control-label" style="text-transform: none;display: inline-block;margin-left: 5%;margin-right: 0px;padding-right: 0px;width: 93px;text-align: right;">Last Name</label>
+								<div class="col-sm-10" style="display: inline-block;margin-left: 0px;width: 65%;">
+								  <input type="text" class="form-control-register" placeholder="LastName" style="margin: 0px;" ng-model="lastName" ng-change="lastNameChange(lastName)">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputEmail3" class="col-sm-2 control-label" style="text-transform: none;display: inline-block;margin-left: 5%;margin-right: 0px;padding-right: 0px;width: 93px;text-align: right;">Password</label>
+								<div class="col-sm-10" style="display: inline-block;margin-left: 0px;width: 65%;height: 40px;">
+								  <input type="password" class="form-control-register" placeholder="6 or more characters" style="margin: 0px;width: 100%;" ng-model="passWord" ng-change="passWordChange(passWord)">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputEmail3" class="col-sm-2 control-label" style="text-transform: none;display: inline-block;margin-left: 5%;margin-right: 0px;padding-right: 0px;text-align: right;vertical-align: middle;width: 93px;"> Confirm Password</label>
+								<div class="col-sm-10" style="display: inline-block;margin-left: 0px;width: 65%;height: 40px;">
+								  <input type="password" class="form-control-register ng-pristine ng-valid" placeholder="Confirm your password" style="margin: 0px;width: 100%;" ng-model="confirmPass" ng-change="confirmPassChange(confirmPass)">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputEmail3" class="col-sm-2 control-label" style="text-transform: none;display: inline-block;margin-left: 5%;margin-right: 0px;padding-right: 0px;width: 93px;text-align: right;">Country</label>
+								<div class="col-sm-10" style="display: inline-block;margin-left: 0px;  width: 65%;">
+									<select class="form-control" style="height: 40px;padding-left: 6px;" ng-model="country" ng-change="countryChange(country)">
+										<option>United States</option>
+										<option>Afghanistan</option>
+										<option>Aland Islands</option>
+										<option>Albania</option>
+										<option>Algeria</option>
+										<option>American Samoa</option>
+										<option>Andorra</option>
+										<option>Angola</option>
+										<option>Anguilla</option>
+										<option>Antarctica</option>
+										<option>Antigua and Barbuda</option>
+										<option>Argentina</option>
+										<option>Armenia</option>
+										<option>Aruba</option>
+										<option>Australia</option>
+										<option>Austria</option>
+										<option>Azerbaijan</option>
+										<option>Bahamas</option>
+										<option>Bahrain</option>
+										<option>Bangladesh</option>
+										<option>Barbados</option>
+										<option>Belarus</option>
+										<option>Belgium</option>
+										<option>Belize</option>
+										<option>Benin</option>
+										<option>Bermuda</option>
+										<option>Bhutan</option>
+										<option>Bolivia</option>
+										<option>Bosnia and Herzegovina</option>
+										<option>Botswana</option>
+										<option>Brazil</option>
+										<option>British Indian Ocean Territory</option>
+										<option>Brunei Darussalam</option>
+										<option>Bulgaria</option>
+										<option>Burkina Faso</option>
+										<option>Burundi</option>
+										<option>Cambodia</option>
+										<option>Cameroon</option>
+										<option>Canada</option>
+										<option>Cape Verde</option>
+										<option>Caribbean Nations</option>
+										<option>Cayman Islands</option>
+										<option>Central African Republic</option>
+										<option>Chad</option>
+										<option>Chile</option>
+										<option>China</option>
+										<option>Christmas Island</option>
+										<option>Cocos (Keeling) Islands</option>
+										<option>Colombia</option>
+										<option>Comoros</option>
+										<option>Congo</option>
+										<option>Cook Islands</option>
+										<option>Costa Rica</option>
+										<option>Cote D'Ivoire (Ivory Coast)</option>
+										<option>Croatia</option>
+										<option>Cuba</option>
+										<option>Cyprus</option>
+										<option>Czech Republic</option>
+										<option>Democratic Republic of the Congo</option>
+										<option>Denmark</option>
+										<option>Djibouti</option>
+										<option>Dominica</option>
+										<option>Dominican Republic</option>
+										<option>East Timor</option>
+										<option>Ecuador</option>
+										<option>Egypt</option>
+										<option>El Salvador</option>
+										<option>Equatorial Guinea</option>
+										<option>Eritrea</option>
+										<option>Estonia</option>
+										<option>Ethiopia</option>
+										<option>Falkland Islands (Malvinas)</option>
+										<option>Faroe Islands</option>
+										<option>Federated States of Micronesia</option>
+										<option>Fiji</option>
+										<option>Finland</option>
+										<option>France</option>
+										<option>French Guiana</option>
+										<option>French Polynesia</option>
+										<option>French Southern Territories</option>
+										<option>Gabon</option>
+										<option>Gambia</option>
+										<option>Georgia</option>
+										<option>Germany</option>
+										<option>Ghana</option>
+										<option>Gibraltar</option>
+										<option>Greece</option>
+										<option>Greenland</option>
+										<option>Grenada</option>
+										<option>Guadeloupe</option>
+										<option>Guam</option>
+										<option>Guatemala</option>
+										<option>Guernsey</option>
+										<option>Guinea</option>
+										<option>Guinea-Bissau</option>
+										<option>Guyana</option>
+										<option>Haiti</option>
+										<option>Honduras</option>
+										<option>Hong Kong</option>
+										<option>Hungary</option>
+										<option>Iceland</option>
+										<option>India</option>
+										<option>Indonesia</option>
+										<option>Iran</option>
+										<option>Iraq</option>
+										<option>Ireland</option>
+										<option>Isle of Man</option>
+										<option>Israel</option>
+										<option>Italy</option>
+										<option>Jamaica</option>
+										<option>Japan</option>
+										<option>Jersey</option>
+										<option>Jordan</option>
+										<option>Kazakhstan</option>
+										<option>Kenya</option>
+										<option>Kiribati</option>
+										<option>Korea</option>
+										<option>Korea (North)</option>
+										<option>Kuwait</option>
+										<option>Kyrgyzstan</option>
+										<option>Laos</option>
+										<option>Latvia</option>
+										<option>Lebanon</option>
+										<option>Lesotho</option>
+										<option>Liberia</option>
+										<option>Libya</option>
+										<option>Liechtenstein</option>
+										<option>Lithuania</option>
+										<option>Luxembourg</option>
+										<option>Macao</option>
+										<option>Macedonia</option>
+										<option>Madagascar</option>
+										<option>Malawi</option>
+										<option>Malaysia</option>
+										<option>Maldives</option>
+										<option>Mali</option>
+										<option>Malta</option>
+										<option>Marshall Islands</option>
+										<option>Martinique</option>
+										<option>Mauritania</option>
+										<option>Mauritius</option>
+										<option>Mayotte</option>
+										<option>Mexico</option>
+										<option>Moldova</option>
+										<option>Monaco</option>
+										<option>Mongolia</option>
+										<option>Montenegro</option>
+										<option>Montserrat</option>
+										<option>Morocco</option>
+										<option>Mozambique</option>
+										<option>Myanmar</option>
+										<option>Namibia</option>
+										<option>Nauru</option>
+										<option>Nepal</option>
+										<option>Netherlands</option>
+										<option>Netherlands Antilles</option>
+										<option>New Caledonia</option>
+										<option>New Zealand</option>
+										<option>Nicaragua</option>
+										<option>Niger</option>
+										<option>Nigeria</option>
+										<option>Niue</option>
+										<option>Norfolk Island</option>
+										<option>Northern Mariana Islands</option>
+										<option>Norway</option>
+										<option>Oman</option>
+										<option>Pakistan</option>
+										<option>Palau</option>
+										<option>Palestinian Territory</option>
+										<option>Panama</option>
+										<option>Papua New Guinea</option>
+										<option>Paraguay</option>
+										<option>Peru</option>
+										<option>Philippines</option>
+										<option>Pitcairn</option>
+										<option>Poland</option>
+										<option>Portugal</option>
+										<option>Puerto Rico</option>
+										<option>Qatar</option>
+										<option>Reunion</option>
+										<option>Romania</option>
+										<option>Russian Federation</option>
+										<option>Rwanda</option>
+										<option>Saint Helena</option>
+										<option>Saint Kitts and Nevis</option>
+										<option>Saint Lucia</option>
+										<option>Saint Pierre and Miquelon</option>
+										<option>Saint Vincent and the Grenadines</option>
+										<option>Samoa</option>
+										<option>San Marino</option>
+										<option>Sao Tome and Principe</option>
+										<option>Saudi Arabia</option>
+										<option>Senegal</option>
+										<option>Serbia</option>
+										<option>Seychelles</option>
+										<option>Sierra Leone</option>
+										<option>Singapore</option>
+										<option>Slovak Republic</option>
+										<option>Slovenia</option>
+										<option>Solomon Islands</option>
+										<option>Somalia</option>
+										<option>South Africa</option>
+										<option>Spain</option>
+										<option>Sri Lanka</option>
+										<option>Sudan</option>
+										<option>Suriname</option>
+										<option>Svalbard and Jan Mayen</option>
+										<option>Swaziland</option>
+										<option>Sweden</option>
+										<option>Switzerland</option>
+										<option>Syria</option>
+										<option>Taiwan</option>
+										<option>Tajikistan</option>
+										<option>Tanzania</option>
+										<option>Thailand</option>
+										<option>Timor-Leste</option>
+										<option>Togo</option>
+										<option>Tokelau</option>
+										<option>Tonga</option>
+										<option>Trinidad and Tobago</option>
+										<option>Tunisia</option>
+										<option>Turkey</option>
+										<option>Turkmenistan</option>
+										<option>Turks and Caicos Islands</option>
+										<option>Tuvalu</option>
+										<option>Uganda</option>
+										<option>Ukraine</option>
+										<option>United Arab Emirates</option>
+										<option>United Kingdom</option>
+										<option>Uruguay</option>
+										<option>Uzbekistan</option>
+										<option>Vanuatu</option>
+										<option>Vatican City State (Holy See)</option>
+										<option>Venezuela</option>
+										<option>Vietnam</option>
+										<option>Virgin Islands (British)</option>
+										<option>Virgin Islands (U.S.)</option>
+										<option>Wallis and Futuna</option>
+										<option>Western Sahara</option>
+										<option>Yemen</option>
+										<option>Zambia</option>
+										<option>Zimbabwe</option>
+										<option>Other</option>
+									</select>	
+								</div>
+							</div>
+							<div class="form-group" id="stateUnited">
+								<label for="inputEmail3" class="col-sm-2 control-label" style="text-transform: none;display: inline-block;margin-left: 5%;margin-right: 0px;padding-right: 0px;width: 93px;text-align: right;">State</label>
+								<div class="col-sm-10" style="display: inline-block;margin-left: 0px; width: 65%;">
+									<select id="State" name="State" class="form-control" style="height: 40px; padding-left: 6px;" ng-model="state" ng-change="stateChange(state)">
+										<option selected="selected">Alabama</option>
+										<option>Montana</option>
+										<option>Alaska</option>
+										<option>Nebraska</option>
+										<option>Arizona</option>
+										<option>Nevada</option>
+										<option>Arkansas</option>
+										<option>New Hampshire</option>
+										<option>California</option>
+										<option>New Jersey</option>
+										<option>Colorado</option>
+										<option>New Mexico</option>
+										<option>Connecticut</option>
+										<option>New York</option>
+										<option>Delaware</option>
+										<option>North Carolina</option>
+										<option>Florida</option>
+										<option>North Dakota</option>
+										<option>Georgia</option>
+										<option>Ohio</option>
+										<option>Hawaii</option>
+										<option>Oklahoma</option>
+										<option>Idaho</option>
+										<option>Oregon</option>
+										<option>Illinois</option>
+										<option>Pennsylvania</option>
+										<option>Indiana</option>
+										<option>Rhode Island</option>
+										<option>Iowa</option>
+										<option>South Carolina</option>
+										<option>Kansas</option>
+										<option>South Dakota</option>
+										<option>Kentucky</option>
+										<option>Tennessee</option>
+										<option>Louisiana</option>
+										<option>Texas</option>
+										<option>Maine</option>
+										<option>Utah</option>
+										<option>Maryland</option>
+										<option>Vermont</option>
+										<option>Massachusetts</option>
+										<option>Virginia</option>
+										<option>Michigan</option>
+										<option>Washington</option>
+										<option>Minnesota</option>
+										<option>West Virginia</option>
+										<option>Mississippi</option>
+										<option>Wisconsin</option>
+										<option>Missouri</option>
+										<option>Wyoming</option>
+									</select>	
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputEmail3" class="col-sm-2 control-label" style="text-transform: none;display: inline-block;margin-left: 5%;margin-right: 0px;padding-right: 0px;width: 93px;text-align: right;">City</label>
+								<div class="col-sm-10" style="display: inline-block;margin-left: 0px;width: 65%;">
+								  <input type="text" class="form-control-register" placeholder="City" style="margin: 0px;" ng-model="city" ng-change="cityChange(city)">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputEmail3" class="col-sm-2 control-label" style="text-transform: none;display: inline-block;margin-left: 5%;margin-right: 0px;padding-right: 0px;">Startup Role</label>
+								<div class="col-sm-10" style="display: inline-block;margin-left: 0px; width: 65%;">
+									<select class="form-control" style="height: 40px;padding-left: 6px;" ng-model="startupRole" ng-change="startupRoleChange(startupRole)">
+										<option selected="selected">Entrepreneur</option>
+										<option>Investor</option>
+										<option>Mentor</option>
+										<option>Developer</option>
+										<option>Engineer</option>
+										<option>Artist</option>
+										<option>Marketing</option>
+										<option>Media</option>
+										<option>Student</option>
+										<option>Other</option>
+									</select>	
+								</div>
+							</div> 
+							<button type="submit" class="btn btn-login" style="margin-left: 34%;width: 62%;height: 50px;margin-top: 15px;margin-bottom: 7px;text-transform: none;font-size: 18px;background: #36739D;      border-color: #36739D;border: 1px solid #36739D;box-shadow: none;border-radius: 6px;font-weight: 600;text-shadow: none;" ng-click="RegisterUser()">Create Your Account</button>
+						</form>	
+						<div class="login-links"> 
+							<a href="" style="float: right; margin-right: 15%; color: #932121;font-size: 16px;" ng-click="GoToForgotPassword()">Forgot password?</a>
+							<br>
+							 <a href="" style="float: right; margin-right: 5%;color: #932121;font-size: 16px;" ng-click="GoToLogin()">I already have an account?</a>
+						</div>	
+					</div> 
+			   </div>
+			</div>
+		</div>
+	</div>
+</div>

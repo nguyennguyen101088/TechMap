@@ -1,0 +1,51 @@
+<div id="login-view-partial" ng-controller="LoginViewController" ng-init="init()">
+	<div class="container" id="login-block">
+		<div class="row">
+			<div class="col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4" style="text-transform:none;">
+				 
+			   <div class="login-box clearfix animated flipInY">
+					<!-- <div class="page-icon animated bounceInDown">
+						<img class="img-responsive rotate-icon" src="img/login-key-icon.png" alt="Key icon">
+					</div> -->
+					<div class="login-logo">
+						<a href=""><img src="img/login-logo.jpg" alt="Company Logo"></a>
+					</div> 
+					<hr>
+					<div class="login-form">
+						<!-- <div class="alert alert-error hide">
+							  <button type="button" class="close" data-dismiss="alert">×</button>
+							  <h4>Error!</h4>
+							   Your Error Message goes here
+						</div> -->
+						<form>
+							 <input id="txtUserName" type="text" placeholder="User name" class="input-field" ng-model="userName" ng-change="userNameChange(userName)" style="width: 85%;"> 
+							 <input type="password" placeholder="Password" class="input-field" ng-model="passWord" ng-change="passWordChange(passWord)" 
+								style="height: 40px;vertical-align: middle;border-radius: 4px;font-family: 'Roboto', sans-serif;font-size: 16px;font-weight: 300;line-height: 35px;width: 85%;"> <!-- required="" -->
+							 <!-- <div class="social-login btn-social-login"> -->
+							 <!-- Or sign in -->
+								<!-- <a href="" class="fb" ng-click="ConnectWithFacebook()"><i class="fa fa-facebook" style="margin-top: 10px;"></i></a>
+								<a href="" class="tw" ng-click="ConnectWithTwitter()"><i class="fa fa-twitter" style="margin-top: 10px;"></i></a> -->
+								<!-- <a href="" class="in" ng-click="ConnectWithLinkedIn()"><i class="fa fa-linkedin" style="margin-top: 10px;"></i></a> -->
+							</div>
+							 <button type="submit" class="btn btn-login" ng-click="Login()">Login</button> 
+						</form>	
+						
+						<div class="login-links"> 
+							<a href="" ng-click="ResetPasswordUser()">
+							   Forgot password?
+							</a>
+							<!-- <br> -->
+							<!-- <a href="" ng-click="SignUpNewUser()">
+							  Don't have an account? <strong>Sign Up</strong>
+							</a> -->
+						</div>
+						<div class="login-links" style="color: #6c6c6c;padding: 5px;">Create an account or Login with</div>
+						<div class="social-login btn-social-login" ng-click="ConnectWithLinkedIn()">
+							<img src="img/linkedin-button.png" alt="LinkedIn Logo">
+						</div>
+					</div> 			        	
+			   </div>
+			</div>
+		</div>
+	</div>
+</div>

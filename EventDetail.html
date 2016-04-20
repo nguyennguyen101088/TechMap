@@ -1,0 +1,76 @@
+<div class="contentHomeRegister" ng-controller="EventDetailViewController" ng-init="init()">	
+	<div class="container" style="padding: 0px;height: 616px;overflow-y: auto;background-color: #888888;">
+		<div class="row">
+			<div class="col-lg-3 col-sm-6" style="padding: 0px;">
+				<div class="card hovercard">
+					<div class="cardheader" style="height: 200px;">
+						<img alt="" style="height: 200px;background-size: cover;" src="img/background-image.jpg">
+						<label style="color: white;float: left;margin-bottom: -110px;top: -186px;position: relative;width: 90%;padding-left: 2%;padding-bottom: 5px;padding-top: 5px;font-size: 18px;margin-top: 0px;opacity: 1;text-align: left;text-transform: none;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;">{{eventData.EventName}}<!-- New Member Brunch --></label>
+						<label style="color: white;float: left;margin-bottom: -100px;top: -136px;position: relative;margin-left: 2%;text-transform: none;background-color: orange;font-weight: normal;padding: 5px;font-size: 14px;">{{eventData.EventDate}}<!-- March, 8th --></label>
+						 <br>
+						 <label style="color: white;float: left;margin-bottom: -110px;top: -110px;position: relative;width: 100%;background-color: gray;padding-left: 2%;padding-bottom: 4px;padding-top: 5px;font-size: 18px;margin-top: 0px;opacity: 0.9;text-align: left;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">{{eventData.EventName}}<!-- NEW MEMBER BRUNCH --></label>
+						 <br>
+						 <label style="color: white;float: left;margin-bottom: -120px;top: -96px;position: relative;margin-left: 2%;padding: 5px;background: grey;font-weight: normal;font-size: 14px;opacity: 0.9;">{{eventData.EventStart}} - {{eventData.EventEnd}}<!-- 11:00AM - 12:00PM --></label>
+					</div>
+				</div>
+				
+				<div class="row row-1" style="margin-left: 3%;margin-right: 3%;background-color: white;text-transform: none;">
+					<div class="row row-1" style="font-weight: 600;font-size: 16px;height: 40px;border-bottom: 1px solid #888888;text-align: center;vertical-align: middle;padding-top: 3%;">4 OTHERS ATTENDING</div>
+					<div class="row row-2" style="padding-bottom: 15px;">
+						<div class="sidebar-message" style="padding: 15px 15px;">
+							<a href="">
+								<div class="pull-left text-center" style="margin-left: 25%;">
+									<img alt="image" class="img-circle message-avatar" src="img/a3.jpg" style="height: 60px;width: 60px;">
+								</div>
+								<div class="pull-left text-center" style="margin-left: 5%;">
+									<img alt="image" class="img-circle message-avatar" src="img/a8.jpg" style="height: 60px;width: 60px;">
+								</div>
+								<div class="pull-left text-center" style="float: right !important;margin-right: 0px;">
+									<img alt="image" class="img-circle message-avatar" src="img/user2.jpg" style="height: 60px;width: 60px;">
+								</div>
+							</a>
+						</div> 
+					</div>
+					<div class="row row-3" style="position: absolute;top: 175px;right: 15px;">
+						<img alt="" style="background-size: cover;background-repeat: no-repeat;height: 50px;width: 50px;border-radius: 50%;cursor: pointer;" src="img/calendar-icon.png">
+					</div>
+				</div>
+				
+				<div class="row row-2" style="margin-left: 3%;margin-right: 3%;margin-top: 20px;background-color: white;text-transform: none;">
+					<div class="row row-1" style="font-weight: 700;font-size: 18px;padding: 20px 15px;">{{eventData.Location}}<!-- Empire State, 6th Floor --></div>
+					<div class="row row-2" style="padding-left: 15px;color: #888888;font-size: 13px;padding-bottom: 15px;">
+						{{streetAddress}}<!-- 349 5th Avenue -->
+						<br>
+						{{cityAddress}}
+					</div>
+					<div class="row row-3" style="width:100%; height:210px">
+						<div id="map" style="width:100%; height:100%"></div>
+					</div>
+				</div>
+				
+				<div class="row row-3" style="margin-left: 3%;margin-right: 3%;margin-top: 20px;background-color: white;text-transform: none;">
+					<div class="row row-1" style="  font-size: 16px;  height: 40px;  border-bottom: 1px solid #888888;  text-align: center;  vertical-align: middle;  padding-top: 3%;color: black;">ABOUT</div>
+					<div class="row row-2" style="padding: 15px 10px;color: black;">
+					{{eventData.EventDescription}}
+						<!-- TriNet will be hosting office hours at Empire State on Thurday, here to answer any questions you have regarding Healthcare, 
+						Payroll, Workers Compensation, or Employment Risk Compliance. TriNet provides bundled HR solutions for small to mid-sized businesses. -->
+					</div>
+				</div>
+				
+				<div class="row row-4" style="
+						height: 40px;
+						margin-right: 3%;
+						margin-left: 3%;
+						margin-top: 20px;
+						margin-bottom: 10px;
+						text-transform: none;
+						text-align: center;  
+						font-size: 14px;
+						font-weight: bold;
+						padding-top: 2.5%;
+						color: black;
+						background: white;" ng-click="BackToMembers()">See All Comments</div>
+			</div>
+		</div>
+	</div>
+</div>

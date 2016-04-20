@@ -1,0 +1,165 @@
+<div class="contentHomeRegister" ng-controller="UserProfileViewController" ng-init="init()">	
+	<div class="container" style="padding: 0px;height: 616px;overflow-y: auto;background-color: black;">
+		<div class="row">
+			<div class="col-lg-3 col-sm-6" style="padding: 0px;">
+
+				<div class="card hovercard">
+					<div class="cardheader">
+						<img alt="" style="height: 135px;background-size: cover;" src="img/background-image.jpg">
+					</div>
+					<div ng-style="{'background-image': 'url(' + urlImageUserProfile + ')'}" 
+						style="position: relative;top: -50px;left: 135px;margin-bottom: -50px;width: 100px;height: 100px;
+							max-width: 100px;max-height: 100px;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;
+							border: 2px solid white;background-position: center center;background-size: 100%;">
+					</div>
+					<div class="info" style="text-transform: none;">
+						<div class="title">
+							<a target="_blank" href="" style="color: white;margin-left: 15%;">{{member.FirstName}} - {{member.LastName}}</a>
+							<ul style="width: 15%;display: inline-block;height: 10px;float: right;">
+								<li class="dropdown" style="margin-top: -5px;margin-left: 60%;"> 
+									<!-- <a href="" class="dropdown-toggle" data-toggle="dropdown" style="font-size: 16px;">All of TechMap <b class="caret"></b></a> -->
+									<a class="dropdown-toggle" data-toggle="dropdown">
+										<span class="sr-only">Toggle navigation</span>
+										<span class="icon-bar" style="width: 25%;  display: block;  height: 6px;  margin: 5px 0 0 0;background-color: #fff;border-radius: 50%;" />
+										<span class="icon-bar" style="width: 25%;  display: block;  height: 6px;  margin: 5px 0 0 0;  background-color: #fff;border-radius: 50%;" />
+										<span class="icon-bar" style="width: 25%;  display: block;  height: 6px;  margin: 5px 0 0 0;  background-color: #fff;border-radius: 50%;" />
+									</a><div class="dropdown-backdrop"></div>
+									<ul class="dropdown-menu" style="background-color:black;top: 36%;right: 1%;left: inherit;position: fixed;">
+										<li style="margin: 0;"><a href="" style="color: #fff;font-weight: 600;" ng-click="GoToEditProfile()">Edit Profile</a></li>
+										<li style="margin: 0;"><a href="" style="color: #fff;font-weight: 600;">Change Location</a></li>
+										<li style="margin: 0;"><a href="" style="color: #fff;font-weight: 600;">Change Notification</a></li>
+									</ul>
+								</li>
+							</ul>
+							<!-- <div class="col-xs-8" style="padding: 0px;margin: 0px;width: 85%;text-overflow: ellipsis; overflow: hidden;white-space: nowrap;text-align: center;margin-left: 2%;">
+								{{member.FirstName}} - {{member.LastName}}
+							</div>
+							<div class="col-xs-4" style="padding: 0px; margin: 0px;width: 10%;float: left;">
+								<ul style="width: 30%;display: inline-block;height: 10px;float: right;">
+									<li class="dropdown" style="margin-top: -5px;margin-left: 60%;"> 
+										<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+											<span class="sr-only">Toggle navigation</span>
+											<span class="icon-bar" style="width: 100%;  display: block;height: 6px;margin: 5px 0 0 0;background-color: #fff;border-radius: 50%;"></span>
+											<span class="icon-bar" style="width: 100%;  display: block;  height: 6px;  margin: 5px 0 0 0;  background-color: #fff;border-radius: 50%;"></span>
+											<span class="icon-bar" style="width: 100%;  display: block;  height: 6px;  margin: 5px 0 0 0;  background-color: #fff;border-radius: 50%;"></span>
+										</a>
+										<ul class="dropdown-menu" style="background-color:black;top: 36%;right: 1%;left: inherit;position: fixed;">
+											<li style="margin: 0;"><a href="" style="color: #fff;font-weight: 600;" ng-click="GoToEditProfile()">Edit Profile</a></li>
+											<li style="margin: 0;"><a href="" style="color: #fff;font-weight: 600;">Send message</a></li>
+											<li style="margin: 0;"><a href="" style="color: #fff;font-weight: 600;">Change Location</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div> -->
+						</div>
+						<div class="desc">{{member.Company}}</div>
+						<div class="desc"><a href="http://thetechmap.com/"  style="color: white;">{{member.Country}}, {{member.City}}</a></div>
+					</div>
+					<!-- <div class="bottom">
+						<a class="btn btn-primary btn-twitter btn-sm btn-link-user-profile" href="">
+							<i class="fa fa-twitter"></i>
+						</a>
+						<a class="btn btn-danger btn-sm btn-link-user-profile" rel="publisher"
+						   href="">
+							<i class="fa fa-linkedin"></i>
+						</a>
+						<a class="btn btn-primary btn-sm btn-link-user-profile" rel="publisher"
+						   href="">
+							<i class="fa fa-facebook"></i>
+						</a>
+						<a class="btn btn-warning btn-sm btn-link-user-profile" rel="publisher" href="http://www.pitchdeals.com/">
+							<i class="fa fa-home"></i>
+						</a>
+					</div> -->
+				</div>
+				
+				<div class="row row-1" style="
+					border: 1px solid;
+					margin-left: 5px;
+					margin-right: 5px;
+					border-radius: 5px;
+					background-color: white;
+					padding: 15px 20px;
+					margin-top: 2px;
+					text-transform: none;" ng-if="member.Bio.length > 0">
+					<div class="row row-1" style="font-weight: bold;font-size: 18px;">ABOUT</div>
+					<div class="row row-2" style="padding: 15px 0px;"> {{member.Bio}}</div>
+				</div>
+				<div class="row row-2" style="
+					border: 1px solid;
+					margin-left: 5px;
+					margin-right: 5px;
+					margin-top: 20px;
+					border-radius: 5px;
+					background-color: white;
+					padding: 15px 20px;
+					text-transform: none;">
+					<div class="row row-1" style="font-weight: bold;font-size: 18px;">CONTACT</div>
+					<div class="row row-2" style="padding: 15px 0px 0px 0px;"> Personal profile </div>
+					<div class="row row-3">
+						<a href="{{urlLinkedInUserProfile}}" style="color: #888888">{{urlLinkedInUserProfile}}</a>
+					</div>
+				</div>
+				
+				<div class="row row-3" style="
+						border: 1px solid;
+						margin-left: 5px;
+						margin-right: 5px;
+						margin-top: 20px;
+						margin-bottom: 5px;
+						border-radius: 5px;
+						background-color: white;
+						text-transform: none;
+					">
+					<div class="row row-1" style="font-weight: bold;font-size: 18px;padding: 15px 20px;">I WORK AT</div>
+					<div class="row row-2">
+						<div class="sidebar-message">
+							<a href="">
+								<div class="pull-left text-center">
+									<img alt="image" class="img-circle company-avatar" src="img/login-logo.jpg">
+								</div>
+								<div class="media-body">{{member.Company}}<br>
+									<small class="text-muted"><i class="fa fa-map-marker" style="margin-right: 5px;"></i>{{member.Country}}, {{member.City}}</small>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="row row-3" style="padding: 15px 20px;">
+						<div style="color: #888888;font-size: 16px;"> I work it </div>
+						<div ng-style="{'background-image': 'url(' + urlImageUserProfile + ')'}" 
+							style="position: relative;width: 50px;height: 50px;
+								max-width: 50px;max-height: 50px;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;
+								border: 2px solid white;background-position: center center;background-size: 100%;">
+						</div>
+					</div>
+				</div>
+				<!-- <div class="row row-4" style="
+						width: 20%;
+						height: 30px;
+						margin-right: 5px;
+						margin-top: 5px;
+						margin-bottom: 5px;
+						border-radius: 3px;
+						background-color: white;
+						text-transform: none;
+						text-align: center;  
+						vertical-align: middle;
+						font-size: 16px;
+						padding-top: 4px;
+						float: right;color: white;
+						text-shadow: 1px 2px 2px #c44c4c;
+						background: #48c7d5;
+						border: 1px solid #42a3ae;
+						-webkit-box-shadow: inset 0 1px 2px #73e2ed;
+						-moz-box-shadow: inset 0 1px 2px #73e2ed;
+						box-shadow: inset 0 1px 2px #73e2ed;
+						-webkit-transition: background .5s ease-in-out;
+						-moz-transition: background .5s ease-in-out;
+						-o-transition: background .5s ease-in-out;
+						transition: background .5s ease-in-out;" ng-click="BackToMembers()">Back</button> 
+				</div> -->
+			</div>
+
+		</div>
+	</div>
+</div>

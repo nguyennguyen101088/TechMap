@@ -1,0 +1,313 @@
+<div class="contentHomeRegister" ng-controller="HomeCompaniesViewController">
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="slide-nav" style="margin-bottom: 0px;">
+		<div class="container">
+			<div class="navbar-header">
+				<div class="row row-1">
+					<a class="navbar-toggle">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+					<ul class="nav navbar-nav" style="width: 43%;margin-left: 15%;text-transform: none;height: 40px;">
+						<li class="dropdown" style="margin-top: 5px;"> <a href="" class="dropdown-toggle" data-toggle="dropdown" style="font-size: 16px;">All of TechMap <b class="caret"></b></a>
+							<ul class="dropdown-menu" style="background-color:black;position: relative;top: 0%;">
+								<li style="margin: 0;"><a href="" style="color:rgb(227, 108, 10);font-size: 16px;font-weight: 600;">Message</a></li>
+								<li style="margin: 0;"><a href="" style="color:rgb(255, 0, 0);font-size: 16px;font-weight: 600;">Community</a></li>
+								<li style="margin: 0;"><a href="" style="color:rgb(0, 176, 240);font-size: 16px;font-weight: 600;">Companies</a></li>
+							</ul>
+						</li>
+					</ul>
+					<button type="submit">
+						<i class="fa fa-search"></i>
+						<!-- <i class="fa fa-calendar-check-o"></i> -->
+					</button>
+				</div>
+				<div class="row row-2" style="margin-top: 10px;">
+					<div class="col-xs-4" style="text-align: center;" ng-click="GoToMessages()">
+						<a class="dropdown-toggle count-info" data-toggle="dropdown" href="" style="padding-top: 20px;padding-bottom: 7px;min-height: 50px;display: block;position: relative;">
+							<i class="fa fa-envelope" style="color: white;font-size:22px;"></i><!--   <span class="label label-warning">16</span> -->
+						</a> 
+					</div>
+					<div class="col-xs-4" style="text-align: center;"  ng-click="GoToMembers()">
+						<a class="dropdown-toggle count-info" data-toggle="dropdown" href="" style="padding-top: 20px;min-height: 50px;display: block;position: relative;">
+							<i class="fa fa-user" style="color: white;font-size:22px;"></i> <!-- <b class="badge bg-color-red bounceIn animated"> 21 </b> -->
+						</a>
+					</div>
+					<div class="col-xs-4" style="text-align: center;">
+						<a class="right-sidebar-toggle count-info" data-toggle="dropdown" href="" style="padding-top: 20px;min-height: 50px;display: block;position: relative;">
+							<i class="fa fa-globe" style="color: white;font-size:22px;"></i><!--  <b class="badge-companies bg-color-red bounceIn animated"> 21 </b> -->
+						</a>
+					</div>
+				</div>
+				<div class="row row-3" style="border: 1px solid orange;top: 0px;position: relative;width: 33.33%;margin-left: 66.67%;" />
+				
+			</div>
+
+			<div id="slidemenu">
+				<ul class="nav navbar-nav" style="text-transform:none;">
+					<li style="margin-top: 0px;"><a href="">Jobs</a></li>
+					<li style="margin-top: 0px;margin-bottom: 0px;"><a href="">Events</a></li>
+					<li style="border-bottom: 1px solid #e3e3e3;padding: 0px;height: 1px;"></li>
+					<li style="margin-top: 0px;margin-bottom: 0px;"><a href="">My Profile</a></li>
+					<li style="margin-top: 0px;margin-bottom: 0px;"><a href="">Company Profile</a></li>
+					<li style="margin-top: 0px;margin-bottom: 0px;"><a href="">Account</a></li>
+					<li style="border-bottom: 1px solid #e3e3e3;padding: 0px;height: 1px;"></li>
+					<li style="margin-top: 0px;margin-bottom: 0px;"><a href="">About</a></li>
+					<li style="margin-top: 0px;margin-bottom: 0px;"><a href="">Contact</a></li>
+					<li style="margin-top: 0px;margin-bottom: 0px;"><a href="">Log Out</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="row" style="margin: 0px;padding: 0px;background: white;border: none;">
+		<div class="row">
+			<header role="heading" style="height: 40px;">
+				<ul class="nav nav-tabs pull-right in" id="myTab" style="width: 100%;background: #f9f9f9">
+					<li style="width: 50%;text-align: center;margin-top: 0px;margin-bottom: 0px;" ng-click="GoToMap()">
+						<a data-toggle="tab"><span style="color:rgb(0, 176, 240);">Map</span></a>
+					</li>
+
+					<li class="active" style="width: 50%;text-align: center;margin-top: 0px;margin-bottom: 0px;">
+						<a data-toggle="tab" href="" ng-click="TestFunction()"><span style="color:rgb(0, 176, 240);">Companies List</span></a>
+					</li>
+				</ul>
+			</header>
+		</div>
+	</div>
+	<!--wrap the page content do not style this-->
+	<div id="page-content" style="padding-top: 0px;overflow-y: scroll;height: 465px;">
+		<div class="container" style="padding-left: 0px;padding-right: 0px;">
+			<article class="col-sm-12 sortable-grid ui-sortable" style="padding-left: 0px;padding-right: 0px;">
+				<!-- new widget -->
+				<div class="jarviswidget jarviswidget-sortable" id="wid-id-0" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false" role="widget">
+					<!-- <header role="heading" style="height: 40px;">
+						<ul class="nav nav-tabs pull-right in" id="myTab" style="width: 100%;background: #f9f9f9">
+							<li style="width: 50%;text-align: center;margin-top: 0px;margin-bottom: 0px;" ng-click="GoToMap()">
+								<a data-toggle="tab" href=""><span style="color:rgb(0, 176, 240);">Map</span></a>
+							</li>
+
+							<li class="active" style="width: 50%;text-align: center;margin-top: 0px;margin-bottom: 0px;">
+								<a data-toggle="tab" href="" ng-click="TestFunction()"><span style="color:rgb(0, 176, 240);">Companies List</span></a>
+							</li>
+						</ul>
+					</header> -->
+					<div class="no-padding" role="content">
+						<div class="widget-body">
+							<!-- content -->
+							<!-- <div id="map"></div>
+							<div id="class" ng-repeat="marker in markers | orderBy : 'title'">
+								 <a href="#" ng-click="openInfoWindow($event, marker)">{{marker.title}}</a>
+							</div> -->
+
+							<div class="tab-content" style="text-transform: none;">
+								<div id="tab-1" class="tab-pane active">
+									<div>
+										<div class="sidebar-message" ng-click="GoToCompanyDetail()">
+											<a>
+												<div class="pull-left text-center">
+													<img alt="image" class="img-circle company-avatar" src="img/login-logo1.png">
+												</div>
+												<div class="media-body">
+
+													There are many variations of passages of Lorem Ipsum available.
+													<br>
+													<small class="text-muted">Today 4:21 pm</small>
+												</div>
+											</a>
+										</div>
+										<div style="border-bottom: 1px solid #e3e3e3;margin-top: 7px;;height: 1px;"></div>
+										<div class="sidebar-message">
+											<a>
+												<div class="pull-left text-center">
+													<img alt="image" class="img-circle company-avatar" src="img/login-logo1.png">
+												</div>
+												<div class="media-body">
+													The point of using Lorem Ipsum is that it has a more-or-less normal.
+													<br>
+													<small class="text-muted">Yesterday 2:45 pm</small>
+												</div>
+											</a>
+										</div>
+										<div style="border-bottom: 1px solid #e3e3e3;margin-top: 7px;;height: 1px;"></div>
+										<div class="sidebar-message">
+											<a>
+												<div class="pull-left text-center">
+													<img alt="image" class="img-circle company-avatar" src="img/login-logo1.png">
+												</div>
+												<div class="media-body">
+													Mevolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+													<br>
+													<small class="text-muted">Yesterday 1:10 pm</small>
+												</div>
+											</a>
+										</div>
+										<div style="border-bottom: 1px solid #e3e3e3;margin-top: 7px;;height: 1px;"></div>
+										<div class="sidebar-message">
+											<a>
+												<div class="pull-left text-center">
+													<img alt="image" class="img-circle company-avatar" src="img/login-logo1.png">
+												</div>
+
+												<div class="media-body">
+													Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the
+													<br>
+													<small class="text-muted">Monday 8:37 pm</small>
+												</div>
+											</a>
+										</div>
+										<div style="border-bottom: 1px solid #e3e3e3;margin-top: 7px;;height: 1px;"></div>
+										<div class="sidebar-message">
+											<a>
+												<div class="pull-left text-center">
+													<img alt="image" class="img-circle company-avatar" src="img/login-logo1.png">
+												</div>
+												<div class="media-body">
+
+													All the Lorem Ipsum generators on the Internet tend to repeat.
+													<br>
+													<small class="text-muted">Today 4:21 pm</small>
+												</div>
+											</a>
+										</div>
+										<div style="border-bottom: 1px solid #e3e3e3;margin-top: 7px;;height: 1px;"></div>
+										<div class="sidebar-message">
+											<a>
+												<div class="pull-left text-center">
+													<img alt="image" class="img-circle company-avatar" src="img/login-logo1.png">
+												</div>
+												<div class="media-body">
+													Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+													<br>
+													<small class="text-muted">Yesterday 2:45 pm</small>
+												</div>
+											</a>
+										</div>
+										<div style="border-bottom: 1px solid #e3e3e3;margin-top: 7px;;height: 1px;"></div>
+										<div class="sidebar-message">
+											<a>
+												<div class="pull-left text-center">
+													<img alt="image" class="img-circle company-avatar" src="img/login-logo1.png">
+												</div>
+												<div class="media-body">
+													The standard chunk of Lorem Ipsum used since the 1500s is reproduced below.
+													<br>
+													<small class="text-muted">Yesterday 1:10 pm</small>
+												</div>
+											</a>
+										</div>
+										<div style="border-bottom: 1px solid #e3e3e3;margin-top: 7px;;height: 1px;"></div>
+										<div class="sidebar-message">
+											<a>
+												<div class="pull-left text-center">
+													<img alt="image" class="img-circle company-avatar" src="img/login-logo1.png">
+												</div>
+												<div class="media-body">
+													Uncover many web sites still in their infancy. Various versions have.
+													<br>
+													<small class="text-muted">Monday 8:37 pm</small>
+												</div>
+											</a>
+										</div>
+										<div style="border-bottom: 1px solid #e3e3e3;margin-top: 7px;;height: 1px;"></div>
+										<div class="sidebar-message">
+											<a>
+												<div class="pull-left text-center">
+													<img alt="image" class="img-circle company-avatar" src="img/login-logo1.png">
+												</div>
+												<div class="media-body">
+													Uncover many web sites still in their infancy. Various versions have.
+													<br>
+													<small class="text-muted">Monday 8:37 pm</small>
+												</div>
+											</a>
+										</div>
+										<div style="border-bottom: 1px solid #e3e3e3;margin-top: 7px;;height: 1px;"></div>
+										<div class="sidebar-message">
+											<a>
+												<div class="pull-left text-center">
+													<img alt="image" class="img-circle company-avatar" src="img/login-logo1.png">
+												</div>
+												<div class="media-body">
+													Uncover many web sites still in their infancy. Various versions have.
+													<br>
+													<small class="text-muted">Monday 8:37 pm</small>
+												</div>
+											</a>
+										</div>
+										<div style="border-bottom: 1px solid #e3e3e3;margin-top: 7px;;height: 1px;"></div>
+										<div class="sidebar-message">
+											<a>
+												<div class="pull-left text-center">
+													<img alt="image" class="img-circle company-avatar" src="img/login-logo1.png">
+												</div>
+												<div class="media-body">
+													Uncover many web sites still in their infancy. Various versions have.
+													<br>
+													<small class="text-muted">Monday 8:37 pm</small>
+												</div>
+											</a>
+										</div>
+										<div style="border-bottom: 1px solid #e3e3e3;margin-top: 7px;;height: 1px;"></div>
+										<div class="sidebar-message">
+											<a>
+												<div class="pull-left text-center">
+													<img alt="image" class="img-circle company-avatar" src="img/login-logo1.png">
+												</div>
+												<div class="media-body">
+													Uncover many web sites still in their infancy. Various versions have.
+													<br>
+													<small class="text-muted">Monday 8:37 pm</small>
+												</div>
+											</a>
+										</div>
+										<div style="border-bottom: 1px solid #e3e3e3;margin-top: 7px;;height: 1px;"></div>
+										<div class="sidebar-message">
+											<a>
+												<div class="pull-left text-center">
+													<img alt="image" class="img-circle company-avatar" src="img/login-logo1.png">
+												</div>
+												<div class="media-body">
+													Uncover many web sites still in their infancy. Various versions have.
+													<br>
+													<small class="text-muted">Monday 8:37 pm</small>
+												</div>
+											</a>
+										</div>
+										<div style="border-bottom: 1px solid #e3e3e3;margin-top: 7px;;height: 1px;"></div>
+										<div class="sidebar-message">
+											<a>
+												<div class="pull-left text-center">
+													<img alt="image" class="img-circle company-avatar" src="img/login-logo1.png">
+												</div>
+												<div class="media-body">
+													Uncover many web sites still in their infancy. Various versions have.
+													<br>
+													<small class="text-muted">Monday 8:37 pm</small>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+					
+							<!-- <div id="myTabContent" class="tab-content">
+								<div class="tab-pane fade padding-10 no-padding-bottom" id="s1">
+									<h2>This is Map</h2>
+								</div>
+								<!-- end s1 tab pane -->
+								<!-- <div class="tab-pane fade padding-10 no-padding-bottom" id="s2">
+									<h2>This is Companies list</h2>
+								</div>
+								<!-- end s tab pane -->
+							<!-- </div> -->
+						</div>	
+					</div>
+				</div>
+			</article>
+		</div>
+		<!-- /.container -->
+	</div>
+	<!-- /#page-content -->
+</div>

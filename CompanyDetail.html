@@ -1,0 +1,107 @@
+<div class="contentHomeRegister" ng-controller="CompanyDetailViewController" ng-init="init()">	
+	<div class="container" style="padding: 0px;height: 616px;overflow-y: auto;background-color: black;">
+		<div class="row">
+			<div class="col-lg-3 col-sm-6" style="padding: 0px;">
+
+				<div class="card hovercard">
+					<div class="cardheader">
+						<img alt="" style="height: 135px;background-size: cover;" src="img/background-image.jpg">
+					</div>
+					<div ng-style="{'background-image': 'url(' + urlImageUserProfile + ')'}" 
+						style="position: relative;top: -50px;left: 135px;margin-bottom: -50px;width: 100px;height: 100px;
+							max-width: 100px;max-height: 100px;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;
+							border: 2px solid white;background-position: center center;background-size: 100%;">
+					</div>
+					<div class="info" style="text-transform: none;">
+						<div class="title" style="text-align: center;">
+							<a target="_blank" href="" style="color: white;">{{company.Name}}</a>
+							<!-- <ul style="width: 15%;display: inline-block;height: 10px;float: right;">
+								<li class="dropdown" style="margin-top: -5px;margin-left: 60%;"> 
+									<a class="dropdown-toggle" data-toggle="dropdown">
+										<span class="sr-only">Toggle navigation</span>
+										<span class="icon-bar" style="width: 25%;  display: block;  height: 6px;  margin: 5px 0 0 0;background-color: #fff;border-radius: 50%;" />
+										<span class="icon-bar" style="width: 25%;  display: block;  height: 6px;  margin: 5px 0 0 0;  background-color: #fff;border-radius: 50%;" />
+										<span class="icon-bar" style="width: 25%;  display: block;  height: 6px;  margin: 5px 0 0 0;  background-color: #fff;border-radius: 50%;" />
+									</a><div class="dropdown-backdrop"></div>
+									<ul class="dropdown-menu" style="background-color:black;top: 36%;right: 1%;left: inherit;position: fixed;">
+										<li style="margin: 0;"><a href="" style="color: #fff;font-weight: 600;" ng-click="GoToEditProfile()">Edit Profile</a></li>
+										<li style="margin: 0;"><a href="" style="color: #fff;font-weight: 600;">Change Location</a></li>
+										<li style="margin: 0;"><a href="" style="color: #fff;font-weight: 600;">Change Notification</a></li>
+									</ul>
+								</li>
+							</ul> -->
+						</div>
+						<!-- <div class="desc">{{member.Company}}</div> -->
+						<div class="desc" style="color: white;">{{company.Address}}, {{company.City}}</div>
+					</div>
+				</div>
+				
+				<div class="row row-1" style="
+					border: 1px solid;
+					margin-left: 5px;
+					margin-right: 5px;
+					border-radius: 5px;
+					background-color: white;
+					padding: 15px 20px;
+					margin-top: 2px;
+					text-transform: none;">
+					<div class="row row-1" style="font-weight: bold;font-size: 18px;">WHAT WE DO</div>
+					<div class="row row-2" style="padding: 15px 0px;"> {{company.Description}}</div>
+				</div>
+				<div class="row row-2" style="
+					border: 1px solid;
+					margin-left: 5px;
+					margin-right: 5px;
+					margin-top: 20px;
+					border-radius: 5px;
+					background-color: white;
+					padding: 15px 20px;
+					text-transform: none;">
+					<div class="row row-1" style="font-weight: bold;font-size: 18px;">CONTACT</div>
+					<div class="row row-2" style="padding: 15px 0px 0px 0px;    font-size: 17px;"> Email </div>
+					<div class="row row-3" style="color: #428bca;">
+						<a href="mailto:{{company.Email}}?Subject=Send%20email" target="_top">{{company.Email}}</a>
+					</div>
+					<div class="row row-4" style="padding: 15px 0px 0px 0px;    font-size: 17px;"> Homepage </div>
+					<div class="row row-5">
+						<a href="{{urlLinkedInUserProfile}}">{{company.Url}}</a>
+					</div>
+				</div>
+				
+				<div class="row row-3" style="
+						border: 1px solid;
+						margin-left: 5px;
+						margin-right: 5px;
+						margin-top: 20px;
+						margin-bottom: 5px;
+						border-radius: 5px;
+						background-color: white;
+						text-transform: none;
+					">
+					<!-- <div class="row row-1" style="font-weight: bold;font-size: 18px;padding: 15px 20px;">I WORK AT</div>
+					<div class="row row-2">
+						<div class="sidebar-message">
+							<a href="">
+								<div class="pull-left text-center">
+									<img alt="image" class="img-circle company-avatar" src="img/login-logo.jpg">
+								</div>
+								<div class="media-body">{{member.Company}}<br>
+									<small class="text-muted"><i class="fa fa-map-marker" style="margin-right: 5px;"></i>{{member.Country}}, {{member.City}}</small>
+								</div>
+							</a>
+						</div>
+					</div> -->
+					<div class="row row-1" style="padding: 15px 20px;">
+						<div style="color: #888888;font-size: 16px;"> I work it </div>
+						<div ng-style="{'background-image': 'url(' + urlImageUserProfile + ')'}" 
+							style="position: relative;width: 50px;height: 50px;
+								max-width: 50px;max-height: 50px;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;
+								border: 2px solid white;background-position: center center;background-size: 100%;">
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

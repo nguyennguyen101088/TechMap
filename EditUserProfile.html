@@ -1,0 +1,454 @@
+<div class="contentHomeRegister" ng-controller="EditUserProfileViewController" ng-init="init()">	
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="slide-nav" style="margin-bottom: 0px;border-bottom: 2px solid white;">
+		<div class="container">
+			<div class="navbar-header">
+				<div class="row row-1">
+					<!-- <a class="navbar-toggle">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a> -->
+					<!-- <ul class="nav navbar-nav" style="width: 43%;margin-left: 15%;text-transform: none;height: 40px;">
+						<li class="dropdown" style="margin-top: 5px;"> <a href="" class="dropdown-toggle" data-toggle="dropdown" style="font-size: 16px;">All of TechMap <b class="caret"></b></a>
+							<ul class="dropdown-menu" style="background-color:black;position: relative;top: 0%;">
+								<li style="margin: 0;"><a href="" style="color:rgb(227, 108, 10);font-size: 16px;font-weight: 600;">Message</a></li>
+								<li style="margin: 0;"><a href="" style="color:rgb(255, 0, 0);font-size: 16px;font-weight: 600;">Community</a></li>
+								<li style="margin: 0;"><a href="" style="color:rgb(0, 176, 240);font-size: 16px;font-weight: 600;">Companies</a></li>
+							</ul>
+						</li>
+					</ul> -->
+					<label style="width: 100%;text-transform:none;margin-top: 4%;color: white;font-size: 20px;font-weight: 700;text-align:center;"> Edit User Profile </label>
+					<!-- <button type="submit">
+						<i class="fa fa-search"></i>
+						<i class="fa fa-calendar-check-o"></i>
+					</button> -->
+				</div>
+				<!-- <div class="row row-2" style="margin-top: 10px;">
+					<div class="col-xs-4" style="text-align: center;" ng-click="GoToMessages()">
+						<a class="dropdown-toggle count-info" data-toggle="dropdown" href="" style="padding-top: 20px;padding-bottom: 7px;min-height: 50px;display: block;position: relative;">
+							<i class="fa fa-envelope" style="color: white;font-size:22px;"></i>
+						</a> 
+					</div>
+					<div class="col-xs-4" style="text-align: center;">
+						<a class="dropdown-toggle count-info" data-toggle="dropdown" href="" style="padding-top: 20px;min-height: 50px;display: block;position: relative;">
+							<i class="fa fa-user" style="color: white;font-size:22px;"></i>
+						</a>
+					</div>
+					<div class="col-xs-4" style="text-align: center;" ng-click="GoToMap()">
+						<a class="right-sidebar-toggle count-info" data-toggle="dropdown" href="" style="padding-top: 20px;min-height: 50px;display: block;position: relative;">
+							<i class="fa fa-globe" style="color: white;font-size:22px;"></i>
+						</a>
+					</div>
+				</div>
+				<div class="row row-3" style="border: 1px solid orange;top: 0px;position: relative;width: 33.33%;margin-left: 33.33%;" /> -->
+			</div>
+
+			<div id="slidemenu">
+				<ul class="nav navbar-nav" style="text-transform:none;">
+					<li style="margin-top: 0px;"><a href="">Jobs</a></li>
+					<li style="margin-top: 0px;margin-bottom: 0px;"><a href="">Events</a></li>
+					<li style="border-bottom: 1px solid #e3e3e3;padding: 0px;height: 1px;"></li>
+					<li style="margin-top: 0px;margin-bottom: 0px;"><a href="">My Profile</a></li>
+					<li style="margin-top: 0px;margin-bottom: 0px;"><a href="">Company Profile</a></li>
+					<li style="margin-top: 0px;margin-bottom: 0px;"><a href="">Account</a></li>
+					<li style="border-bottom: 1px solid #e3e3e3;padding: 0px;height: 1px;"></li>
+					<li style="margin-top: 0px;margin-bottom: 0px;"><a href="">About</a></li>
+					<li style="margin-top: 0px;margin-bottom: 0px;"><a href="">Contact</a></li>
+					<li style="margin-top: 0px;margin-bottom: 0px;"><a href="">Log Out</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div id="page-content" style="padding-top: 0px;">
+		<div class="container" style="padding-left: 0px;padding-right: 0px;">
+			<article class="col-sm-12 sortable-grid ui-sortable" style="padding-left: 0px;padding-right: 0px;">
+			<!-- new widget -->
+				<div class="jarviswidget jarviswidget-sortable" id="wid-id-0" data-widget-togglebutton="false"
+					 data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-colorbutton="false"
+					 data-widget-deletebutton="false" role="widget" style="height:562px;overflow-y:scroll;text-transform:none;overflow-x: hidden;">
+					<header role="heading" style="height: 40px;">
+						<ul class="nav nav-tabs pull-right in" id="myTab" style="width: 100%;background: #f9f9f9">
+						  <li class="active" style="width: 27%;text-align: center;margin-top: 0px;margin-bottom: 0px;">
+							<a data-toggle="tab" data-content="tab-content-1" ng-click="onTabChange($event)" style="padding-left: 1px;padding-right: 1px;">
+							  <span style="color:rgb(0, 176, 240);">User Profile</span></a>
+						  </li>
+
+						  <li style="width: 23%;text-align: center;margin-top: 0px;margin-bottom: 0px;">
+							<a data-toggle="tab" href="" data-content="tab-content-2" ng-click="onTabChange($event)" style="padding-left: 1px;padding-right: 1px;">
+							  <span style="color:rgb(0, 176, 240);">Companies</span></a>
+						  </li>
+						  <li style="width: 15%;text-align: center;margin-top: 0px;margin-bottom: 0px;">
+							<a data-toggle="tab" href="" data-content="tab-content-3" ng-click="onTabChange($event)" style="padding-left: 1px;padding-right: 1px;">
+							  <span style="color:rgb(0, 176, 240);">Events</span></a>
+						  </li>
+						  <li style="width: 15%;text-align: center;margin-top: 0px;margin-bottom: 0px;">
+							<a data-toggle="tab" href="" data-content="tab-content-4" ng-click="onTabChange($event)" style="padding-left: 1px;padding-right: 1px;">
+							  <span style="color:rgb(0, 176, 240);">Jobs</span></a>
+						  </li>
+						  <li style="width: 20%;text-align: center;margin-top: 0px;margin-bottom: 0px;">
+							<a data-toggle="tab" href="" data-content="tab-content-5" ng-click="onTabChange($event)" style="padding-left: 1px;padding-right: 1px;">
+							  <span style="color:rgb(0, 176, 240);">Pitches</span></a>
+						  </li>
+						</ul>
+					</header>
+					<div class="no-padding" role="content">
+						<div class="widget-body">
+						<!-- content -->
+							<div id="tab-content" class="tab-content" style="text-transform: none;">
+							<div id="tab-content-1" class="tab-pane active">
+								<form class="form-horizontal">	
+									<div class="form-group" style="margin-top: 4%;">
+										<label for="usr" style="text-transform: none;margin-left: 10%;margin-right: 0px;padding-right: 0px;width: 100%;text-align: left;">First Name</label>
+										<input type="text" class="form-control" style="width: 80%;margin-left: 10%;margin-right: 10%;" ng-model="firstName" ng-change="firstNameChange(firstName)">
+									</div>
+									<div class="form-group">
+										<label for="usr" style="text-transform: none;margin-left: 10%;margin-right: 0px;padding-right: 0px;width: 100%;text-align: left;">Last Name</label>
+										<input type="text" class="form-control" style="width: 80%;margin-left: 10%;margin-right: 10%;" ng-model="lastName" ng-change="lastNameChange(lastName)">
+									</div>
+									<div class="form-group">
+										<label for="usr" style="text-transform: none;margin-left: 10%;margin-right: 0px;padding-right: 0px;width: 100%;text-align: left;">Email</label>
+										<input type="text" class="form-control" id="usr" style="width: 80%;margin-left: 10%;margin-right: 10%;" ng-model="email"><!-- ng-model="email" ng-change="countryChange(email)" -->
+									</div>
+									<div class="form-group">
+										<label for="usr" style="text-transform: none;margin-left: 10%;margin-right: 0px;padding-right: 0px;width: 100%;text-align: left;">Company</label>
+										<input type="text" class="form-control" id="usr" style="width: 80%;margin-left: 10%;margin-right: 10%;" ng-model="company" ng-change="companyChange(company)">
+									</div>
+									<div class="form-group">
+										<label for="usr" style="text-transform: none;margin-left: 10%;margin-right: 0px;padding-right: 0px;width: 100%;text-align: left;">Job Title</label>
+										<input type="text" class="form-control" id="usr" style="width: 80%;margin-left: 10%;margin-right: 10%;" ng-model="jobTitle" ng-change="jobTitleChange(jobTitle)">
+									</div>
+									<div class="form-group">
+										<label for="usr" style="text-transform: none;margin-left: 10%;margin-right: 0px;padding-right: 0px;width: 100%;text-align: left;">Industry</label>
+										<input type="text" class="form-control" id="usr" style="width: 80%;margin-left: 10%;margin-right: 10%;" ng-model="industry" ng-change="industryChange(industry)">
+									</div>
+									<div class="form-group">
+										<label for="usr" style="text-transform: none;margin-left: 10%;margin-right: 0px;padding-right: 0px;width: 100%;text-align: left;">Website</label>
+										<input type="text" class="form-control" id="usr" style="width: 80%;margin-left: 10%;margin-right: 10%;" ng-model="website" ng-change="websiteChange(website)">
+									</div>
+									<div class="form-group">
+										<label for="usr" style="text-transform: none;margin-left: 10%;margin-right: 0px;padding-right: 0px;width: 100%;text-align: left;">Twitter Handle</label>
+										<input type="text" class="form-control" id="usr" style="width: 80%;margin-left: 10%;margin-right: 10%;" ng-model="twitter" ng-change="twitterChange(twitter)">
+									</div>
+									<div class="form-group">
+										<label for="usr" style="text-transform: none;margin-left: 10%;margin-right: 0px;padding-right: 0px;width: 100%;text-align: left;">Facebook Profile</label>
+										<input type="text" class="form-control" placeholder="www.facebook.com/" style="width: 80%;margin-left: 10%;margin-right: 10%;"ng-model="facebook" ng-change="facebookChange(facebook)">
+									</div>
+									<div class="form-group">
+										<label for="usr" style="text-transform: none;margin-left: 10%;margin-right: 0px;padding-right: 0px;width: 100%;text-align: left;">LinkedIn Profile</label>
+										<input type="text" class="form-control" placeholder="www.linkedin.com/"  style="width: 80%;margin-left: 10%;margin-right: 10%;" ng-model="linkedIn" ng-change="linkedInChange(linkedIn)">
+									</div>
+									<div class="form-group">
+										<label for="comment" style="text-transform: none;margin-left: 10%;margin-right: 0px;padding-right: 0px;width: 100%;text-align: left;">Bio</label>
+										<textarea class="form-control" rows="2" id="comment" style="width: 80%;margin-left: 10%; margin-right: 10%;background: white;border: 1px solid #ddd; height: 100%;padding-left: 5px;" ng-model="bio" ng-change="bioChange(bio)"></textarea>
+									</div>
+									<div class="form-group">
+										<label for="comment" style="text-transform: none;margin-left: 10%;margin-right: 0px;padding-right: 0px;width: 100%;text-align: left;">What problems can you solve?</label>
+										<textarea class="form-control" rows="2" placeholder="In one sentence, tell us what you are best at ..." style="width: 80%;margin-left: 10%; margin-right: 10%;background: white;border: 1px solid #ddd; height: 100%;padding-left: 5px;" ng-model="problems" ng-change="problemsChange(problems)"></textarea>
+									</div>
+									<div class="form-group">
+										<label for="comment" style="text-transform: none;margin-left: 10%;margin-right: 0px;padding-right: 0px;width: 100%;text-align: left;">What are you looking for?</label>
+										<textarea class="form-control" rows="2" placeholder="Tell us if you are looking for developers, designers, marketing, etc..." style="width: 80%;margin-left: 10%; margin-right: 10%;background: white;border: 1px solid #ddd; height: 100%;padding-left: 5px;" ng-model="lookingFor" ng-change="lookingForChange(lookingFor)"></textarea>
+									</div>
+									<div class="form-group">
+										<label for="comment" style="text-transform: none;margin-left: 10%;margin-right: 0px;padding-right: 0px;width: 100%;text-align: left;">Skills</label>
+										<textarea class="form-control" rows="2" id="comment" style="width: 80%;margin-left: 10%; margin-right: 10%;background: white;border: 1px solid #ddd; height: 100%;padding-left: 5px;" ng-model="skills" ng-change="skillsChange(skills)"></textarea>
+									</div>
+									<div class="form-group">
+										<label for="comment" style="text-transform: none;margin-left: 10%;margin-right: 0px;padding-right: 0px;width: 100%;text-align: left;">What role do you see yourself as?</label>
+										<div class="col-sm-10" style="display: inline-block;margin-left: 6%;width: 88%;margin-right: 6%;">
+											<select class="form-control" style="height: 40px;padding-left: 5px;" ng-model="startupRole" ng-change="startupRoleChange(startupRole)">
+												<option>Undisclosed</option>
+												<option>Entrepreneur</option>
+												<option>Investor</option>
+												<option>Mentor</option>
+												<option>Developer</option>
+												<option>Engineer</option>
+												<option>Artist</option>
+												<option>Marketing</option>
+												<option>Media</option>
+												<option>Student</option>
+												<option>Other</option>
+											</select>	
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="comment" style="text-transform: none;margin-left: 10%;margin-right: 0px;padding-right: 0px;width: 100%;text-align: left;">Country</label>
+										<div class="col-sm-10" style="display: inline-block;margin-left: 6%;width: 88%;margin-right: 6%;">
+											<select class="form-control" style="height: 40px;padding-left: 5px;" ng-model="country" ng-change="countryChange(country)">
+												<option>United States</option>
+												<option>Afghanistan</option>
+												<option>Aland Islands</option>
+												<option>Albania</option>
+												<option>Algeria</option>
+												<option>American Samoa</option>
+												<option>Andorra</option>
+												<option>Angola</option>
+												<option>Anguilla</option>
+												<option>Antarctica</option>
+												<option>Antigua and Barbuda</option>
+												<option>Argentina</option>
+												<option>Armenia</option>
+												<option>Aruba</option>
+												<option>Australia</option>
+												<option>Austria</option>
+												<option>Azerbaijan</option>
+												<option>Bahamas</option>
+												<option>Bahrain</option>
+												<option>Bangladesh</option>
+												<option>Barbados</option>
+												<option>Belarus</option>
+												<option>Belgium</option>
+												<option>Belize</option>
+												<option>Benin</option>
+												<option>Bermuda</option>
+												<option>Bhutan</option>
+												<option>Bolivia</option>
+												<option>Bosnia and Herzegovina</option>
+												<option>Botswana</option>
+												<option>Brazil</option>
+												<option>British Indian Ocean Territory</option>
+												<option>Brunei Darussalam</option>
+												<option>Bulgaria</option>
+												<option>Burkina Faso</option>
+												<option>Burundi</option>
+												<option>Cambodia</option>
+												<option>Cameroon</option>
+												<option>Canada</option>
+												<option>Cape Verde</option>
+												<option>Caribbean Nations</option>
+												<option>Cayman Islands</option>
+												<option>Central African Republic</option>
+												<option>Chad</option>
+												<option>Chile</option>
+												<option>China</option>
+												<option>Christmas Island</option>
+												<option>Cocos (Keeling) Islands</option>
+												<option>Colombia</option>
+												<option>Comoros</option>
+												<option>Congo</option>
+												<option>Cook Islands</option>
+												<option>Costa Rica</option>
+												<option>Cote D'Ivoire (Ivory Coast)</option>
+												<option>Croatia</option>
+												<option>Cuba</option>
+												<option>Cyprus</option>
+												<option>Czech Republic</option>
+												<option>Democratic Republic of the Congo</option>
+												<option>Denmark</option>
+												<option>Djibouti</option>
+												<option>Dominica</option>
+												<option>Dominican Republic</option>
+												<option>East Timor</option>
+												<option>Ecuador</option>
+												<option>Egypt</option>
+												<option>El Salvador</option>
+												<option>Equatorial Guinea</option>
+												<option>Eritrea</option>
+												<option>Estonia</option>
+												<option>Ethiopia</option>
+												<option>Falkland Islands (Malvinas)</option>
+												<option>Faroe Islands</option>
+												<option>Federated States of Micronesia</option>
+												<option>Fiji</option>
+												<option>Finland</option>
+												<option>France</option>
+												<option>French Guiana</option>
+												<option>French Polynesia</option>
+												<option>French Southern Territories</option>
+												<option>Gabon</option>
+												<option>Gambia</option>
+												<option>Georgia</option>
+												<option>Germany</option>
+												<option>Ghana</option>
+												<option>Gibraltar</option>
+												<option>Greece</option>
+												<option>Greenland</option>
+												<option>Grenada</option>
+												<option>Guadeloupe</option>
+												<option>Guam</option>
+												<option>Guatemala</option>
+												<option>Guernsey</option>
+												<option>Guinea</option>
+												<option>Guinea-Bissau</option>
+												<option>Guyana</option>
+												<option>Haiti</option>
+												<option>Honduras</option>
+												<option>Hong Kong</option>
+												<option>Hungary</option>
+												<option>Iceland</option>
+												<option>India</option>
+												<option>Indonesia</option>
+												<option>Iran</option>
+												<option>Iraq</option>
+												<option>Ireland</option>
+												<option>Isle of Man</option>
+												<option>Israel</option>
+												<option>Italy</option>
+												<option>Jamaica</option>
+												<option>Japan</option>
+												<option>Jersey</option>
+												<option>Jordan</option>
+												<option>Kazakhstan</option>
+												<option>Kenya</option>
+												<option>Kiribati</option>
+												<option>Korea</option>
+												<option>Korea (North)</option>
+												<option>Kuwait</option>
+												<option>Kyrgyzstan</option>
+												<option>Laos</option>
+												<option>Latvia</option>
+												<option>Lebanon</option>
+												<option>Lesotho</option>
+												<option>Liberia</option>
+												<option>Libya</option>
+												<option>Liechtenstein</option>
+												<option>Lithuania</option>
+												<option>Luxembourg</option>
+												<option>Macao</option>
+												<option>Macedonia</option>
+												<option>Madagascar</option>
+												<option>Malawi</option>
+												<option>Malaysia</option>
+												<option>Maldives</option>
+												<option>Mali</option>
+												<option>Malta</option>
+												<option>Marshall Islands</option>
+												<option>Martinique</option>
+												<option>Mauritania</option>
+												<option>Mauritius</option>
+												<option>Mayotte</option>
+												<option>Mexico</option>
+												<option>Moldova</option>
+												<option>Monaco</option>
+												<option>Mongolia</option>
+												<option>Montenegro</option>
+												<option>Montserrat</option>
+												<option>Morocco</option>
+												<option>Mozambique</option>
+												<option>Myanmar</option>
+												<option>Namibia</option>
+												<option>Nauru</option>
+												<option>Nepal</option>
+												<option>Netherlands</option>
+												<option>Netherlands Antilles</option>
+												<option>New Caledonia</option>
+												<option>New Zealand</option>
+												<option>Nicaragua</option>
+												<option>Niger</option>
+												<option>Nigeria</option>
+												<option>Niue</option>
+												<option>Norfolk Island</option>
+												<option>Northern Mariana Islands</option>
+												<option>Norway</option>
+												<option>Oman</option>
+												<option>Pakistan</option>
+												<option>Palau</option>
+												<option>Palestinian Territory</option>
+												<option>Panama</option>
+												<option>Papua New Guinea</option>
+												<option>Paraguay</option>
+												<option>Peru</option>
+												<option>Philippines</option>
+												<option>Pitcairn</option>
+												<option>Poland</option>
+												<option>Portugal</option>
+												<option>Puerto Rico</option>
+												<option>Qatar</option>
+												<option>Reunion</option>
+												<option>Romania</option>
+												<option>Russian Federation</option>
+												<option>Rwanda</option>
+												<option>Saint Helena</option>
+												<option>Saint Kitts and Nevis</option>
+												<option>Saint Lucia</option>
+												<option>Saint Pierre and Miquelon</option>
+												<option>Saint Vincent and the Grenadines</option>
+												<option>Samoa</option>
+												<option>San Marino</option>
+												<option>Sao Tome and Principe</option>
+												<option>Saudi Arabia</option>
+												<option>Senegal</option>
+												<option>Serbia</option>
+												<option>Seychelles</option>
+												<option>Sierra Leone</option>
+												<option>Singapore</option>
+												<option>Slovak Republic</option>
+												<option>Slovenia</option>
+												<option>Solomon Islands</option>
+												<option>Somalia</option>
+												<option>South Africa</option>
+												<option>Spain</option>
+												<option>Sri Lanka</option>
+												<option>Sudan</option>
+												<option>Suriname</option>
+												<option>Svalbard and Jan Mayen</option>
+												<option>Swaziland</option>
+												<option>Sweden</option>
+												<option>Switzerland</option>
+												<option>Syria</option>
+												<option>Taiwan</option>
+												<option>Tajikistan</option>
+												<option>Tanzania</option>
+												<option>Thailand</option>
+												<option>Timor-Leste</option>
+												<option>Togo</option>
+												<option>Tokelau</option>
+												<option>Tonga</option>
+												<option>Trinidad and Tobago</option>
+												<option>Tunisia</option>
+												<option>Turkey</option>
+												<option>Turkmenistan</option>
+												<option>Turks and Caicos Islands</option>
+												<option>Tuvalu</option>
+												<option>Uganda</option>
+												<option>Ukraine</option>
+												<option>United Arab Emirates</option>
+												<option>United Kingdom</option>
+												<option>Uruguay</option>
+												<option>Uzbekistan</option>
+												<option>Vanuatu</option>
+												<option>Vatican City State (Holy See)</option>
+												<option>Venezuela</option>
+												<option>Vietnam</option>
+												<option>Virgin Islands (British)</option>
+												<option>Virgin Islands (U.S.)</option>
+												<option>Wallis and Futuna</option>
+												<option>Western Sahara</option>
+												<option>Yemen</option>
+												<option>Zambia</option>
+												<option>Zimbabwe</option>
+												<option>Other</option>
+											</select>	
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="usr" style="text-transform: none;margin-left: 10%;margin-right: 0px;padding-right: 0px;width: 100%;text-align: left;">City</label>
+										<input type="text" class="form-control" id="usr" style="width: 80%;margin-left: 10%;margin-right: 10%;" ng-model="city" ng-change="cityChange(city)">
+									</div>
+									<button type="submit" class="btn btn-login" style="width: 50%;height: 50px;margin-top:5%;margin-bottom:10%;float: left;margin-left: 6%;text-transform: none;font-size: 20px;border: 1px solid #6F9B63;background: #6F9B63;box-shadow: none;" ng-click="SaveChangeUserProfile()">Save Changes</button>
+								</form>
+							</div>
+							<div id="tab-content-2" class="tab-pane">
+								Companies here
+							</div>
+							<div id="tab-content-3" class="tab-pane">
+								Events here
+							</div>
+							<div id="tab-content-4" class="tab-pane">
+								Jobs here
+							</div>
+							<div id="tab-content-5" class="tab-pane">
+								Pitches here
+							</div>
+						</div>
+						</div>
+					</div>
+				</div>
+		  </article>
+		</div>
+		<!-- /.container -->
+	</div>
+	  <!-- /#page-content -->
+</div>
